@@ -1,272 +1,278 @@
 var hasDick = false;
 
-function main() {
-	clear();
-	append("Do you have a dick?");
-	addChoice("Yes", startD);
-	addChoice("No", startnoD);
+function main(seg) {
+	if (seg == "start") {
+		clear();
+		append("Do you have a dick?");
+		addChoice("Yes", binder("startD"));
+		addChoice("No", binder("startnoD"));
+	}
+
+	if (seg == "startD") {
+		clear();
+		hasDick = true;
+		append("On your journey through the Bright Forest you stumble upon a small lake with huge reeds and leaves surrounding it. You approach the crystal clear water, which almost appears to be floating above the sandbank. Carefully, you dip your feet into the water. It's surprisingly warm.");
+		addChoice("Go for a swim.", binder("goSwim1"), {kinks: ["Guest Writer", "Art", "Female",]});
+		addChoice("I'm not into butt stuff. Time to leave.", modExit);
+	}
+
+	if (seg == "startnoD") {
+		clear();
+		hasDick = false;
+		append("On your journey through the Bright Forest you stumble upon a small lake with huge reeds and leaves surrounding it. You approach the crystal clear water, which almost appears to be floating above the sandbank. Carefully, you dip your feet into the water. It's surprisingly warm.");
+		addChoice("Go for a swim", binder("goSwim1"), {kinks: ["Guest Writer", "Art", "Female",]});
+		addChoice("I'm not into butt stuff. Time to leave.", modExit);
+	}
+
+	if (seg == "goSwim1") {
+		clear();
+		append("Just as you're about to get rid of your clothes, you notice a silent humming not far away. It seems to be coming from behind those giant leaves.");
+		addChoice("Follow the humming", binder("goHumming"));
+	}
+
+	if (seg == "goHumming") {
+		clear();
+		var image = addSprite("goocover.png");
+		image.x = GAME_WIDTH-image.width;
+		image.y = 50;
+		append("You carefully approach the source of the noise, unsure whether your presence is known or appreciated by the figure which\nyou happen to get a glimpse of through the leaves.\n\nA few meters away, albeit in the thicket, you freeze.");
+		addChoice("Talk to her.", binder("gooTalk1"));
+		addChoice("I should probably leave.", modExit);
+	}
+
+	if (seg == "gooTalk1") {
+		clear();
+		append("You force a few plants apart and step, rustling and crackling, into the light. The girl looks rather surprised about the unexpected visitor. \n\nAt first she blushes and turns her head away, but she quickly gathers her confidence and, with a small smile on her face, in the most innocent way a completely naked stranger could sayit, she says: \n\n\"Oh, hello there player.\"");
+		addChoice("Who are you?", binder("gooTalk2"));
+	}
+
+	if (seg == "gooTalk2") {
+		clear();
+		append("\"I'm not quite sure what I am, all I know is that I'm definitely not the way I was intended to be. Something must have gone wrong when I was created,\" she says, losing the cute smile.");
+		addChoice("Uhm?", binder("gooTalk3"));
+	}
+
+	if (seg == "gooTalk3") {
+		clear();
+		append("You sit down to hear her out.\n\n\"You really should just leave and come back when all this is fixed. I'm really weird.\"");
+		addChoice("What do you mean?", binder("gooTalk4"));
+	}
+
+	if (seg == "gooTalk4") {
+		clear();
+		var image = addSprite("googirl.png");
+		image.x = GAME_WIDTH-image.width;
+		image.y = 50;
+		append("\"It's my butt. My whole body works just fine, but my butt isn't normal at all.\"\nShe says rubbing her hand over her perky and squishy nipples.\n\n\"If I leave it out just a few minutes in the sun, I not only get extremely horny\nbut also itchy, you know, down there. Not to mention how sensitive it is.\"\n\nShe gropes her ass with the other hand\nwhile her green face slowly turns red.");
+		addChoice("But, the sun's been shining on your butt the whole time I'm here...", binder("gooTalk5"));
+	}
+
+	if (seg == "gooTalk5") {
+		clear();
+		append("\"Wait, what?\" She turns to look at her butt. She's already furiously groping it with her hand.\n\"Uhm, you better leave now— and maybe cover your ears till you get some distance.");
+		addChoice("Or I could help you out. ;)", binder("gooStuff1"));
+		addChoice("Leave", modExit);
+	}
+
+	if (seg == "gooStuff1") {
+		clear();
+		append("\"S-Sure, if you'd like to do that.\"\n\nYou come closer while she lowers her upper body, rhythmically brushing her breasts against the ground and sticking her bottom in the air. Your face is just inches away from her ass as she starts to slowly crawl forward. You instinctively grab her waist, not wanting her to distance herself one bit from you. \n\n\"You know, we should really get out of the sun. I've never kept my bum in the sun for this long, and I don't wanna think about what would happen to me if I let it shine on my most intimate parts...\" she says, wiggling her ass anxiously in your hands. She's already breathing heavily and goo-sweat-drips are building up on your hands.");
+		addChoice("I want you to spread it. :3", binder("gooStuff2"));
+	}
+
+	if (seg == "gooStuff2") {
+		clear();   
+		append("\"Hnn..\" She seems uncertain but you can almost feel the arousal building up in her and you're determined to not let her wiggle her way out of the situation. For like thirty seconds she just lays there, weighing her options, swinging her butt from left to right in your hands, but eventually, eyes half-closed, she grabs her buttcheecks.");
+		addChoice("Next.", binder("gooStuff3"));
+	}
+
+	if (seg == "gooStuff3") {
+		clear();
+		var image = addSprite("goonaughty.png");
+		image.x = GAME_WIDTH-image.width;
+		image.y = 50;
+		append("She slowly spreads them wide apart. And you can see how the sun rays start to hit her cute puckered bumhole\nwhile you embrace the scent of her dripping snatch mixed with fresh sweat.\nHer little pucker twitches in anticipation. \"Pleeeaaase— my assshoole!\"");
+		addChoice("Tonguefuck it", binder("Tongue1"));
+		addChoice("Fingerfuck it", binder("Finger1"));
+	}
+
+	if (seg == "Fuck1") {
+		clear();
+		append("You place your cock right between her asscheeks. So she wants to be fucked?\n\n\"Yeessss, pleeease fuck my obscene bummm.\"\n\nYou prod her asshole, which is already smothering with her sweat, juices, and your precum.\n\nYou start pushing, making her anus ever so slowly open up. She is more than just a little tight and its starting to become a real struggle to push into her. After the longest few seconds you've ever experienced, you're finally quite deep inside her bum. Her asshole is gripping your member tightly, rhythmically squeezing it. It's almost painful for you, you really don't even want to imagine what she must be feeling right now.\n\n\"Hnnn sooo fucking goood, please fuck up my slutty bumholeee. <3\"\n\nWell, maybe you will...\n\nYou start fucking her, making her grunt and even slobber a bit, til she's completely lost in ecstasy. Picking up the pace, you start sending waves through her jiggling asscheecks with every thrust, fucking her pucker balls deep which almost seems like it wants to suck you off.\n\n\"Hnnn... yes... keep fucking my perverted asshole!\"");
+		addChoice("Fuck her up.", binder("Fuck2"));
+	}
+
+	if (seg == "Fuck2") {
+		clear();
+		append("She reaches back with both hands to spread her asscheecks and anus wide open for you. You adjust your movement, pulling your dick out of her every time you move your hips back and effortlessly entering her meanwhile open anus.\n\nNow going all out, your mind starts getting blurry as you thoughtlessly ravage her asshole like an animal, not even caring anymore whether or not she likes it. \"Yeeeesss... Fuck me like a worthless toooyyy.\"\n\nShe really is weird...\n\nYou keep on thrusting, almost drowning her groaning underneath the sound of her ass getting relentlessly fucked, pushing ythe both of you to your absolute limits: \"Hnnn— I'm gonna...\" ");
+		addChoice("... Cum.", binder("Fuck3"));
+	}
+
+	if (seg == "Fuck3") {
+		clear();
+		append("She presses her ass full force against you as she tightens up even more, making you cum simultaneously. \"Yeesss. <3 Spurt your cum deep in my assholeee!\"\n\nShe sinks to her knees as you hear the sounds of your cum flowing into her, re-doing your deep thrust from time to time, making her ass suckle on your dick till you're completely dry. \n\nShe collapses with a released sigh and you let yourself fall to the ground beside her. She has an almost drunken smile on her face: \"You know what? Maybe I like the way I am. :)\"");
+		addChoice("That was awesome. (End)", binder("normalEnd"));
+		addChoice("Do you wanna live in my home with me and Bleat?", binder("meme"));
+	}
+
+	if (seg == "Tongue1") {
+		clear();
+		append("You let go of her hips and carefully but firmly place your hands on her inner asschecks, spreading her anus a bit open in the process to get an even closer look at it. \n\nA silent whimper escapes the goo girl as she can feel the cooling breath touching her private parts. \n\nYou carefully kiss one of her asschecks, barely touching the surface with your lips. She responds with a longing \"Hnnn <3\". Finally you place your tongue on her asshole and give it a long sloppy lick. She kind of tastes like salt-crackers. <3\n\n\"Pleeaaase~\"");
+		addChoice("Make her beg.", binder("TongueDirty2"));
+		addChoice("Next.", binder("Tongue2"));
+	}
+
+	if (seg == "Tongue1Hand") {
+		clear();
+		append("You remove your finger from her asshole and carefully but firmly place your hands on her inner asschecks, spreading her anus a bit open in the process to get an even closer look at it. \n\nA silent whimper escapes the goo girl as she can feel the cooling breath touching her private parts. You carefully kiss one of her asschecks, barely touching the surface with your lips. She responds with a longing \"Hnnn <3\". Finally you place your tongue on her asshole and give it a long sloppy lick. She kind of tastes like salt-crackers. <3 \n\n\"Pleeaaase~\"");
+		addChoice("Make her beg.", binder("TongueDirty2"));
+		addChoice("Next.", binder("Tongue2"));
+	}
+
+	if (seg == "TongueDirty2") {
+		clear();   
+		append("She needs to give more specific instructions than that... \"Please tonguefuck my naughty little asshole, because I'm a dirty slut who gets off with a tongue in her perverted aaassss.\"\n\nYou start licking her pucker in circles, making it twitch vigorously. You can hear the silent smacking sounds of it opening up and instantly closing again. She's a little more eager than you: \"I'm going to fucking go crazyyy. PLEASE, ram your tongue into my fucked up asshole!\"");
+		addChoice("Time to get serious.", binder("TongueDirty3"));
+	}
+
+	if (seg == "TongueDirty3") {
+		clear();   
+		append("You hug both her thighs with your arms to make sure she can't escape and place the tip of your tongue directly on her little hole. You slowly start to apply pressure onto her entrance... You can feel how she ever so slowly starts to open up, and you start digging your tongue bit by bit into her. She seems to be enjoying it:\n\"Hnnn— fuuck my asshole. <3\" \n\nYou start moving your tongue in and out of her asshole. Every time you pull your tongue out of it, it starts smacking and kissing the sun, making it open up wide. The smell of her pussy grows stronger while you can hear her grunting as you smother your face into her lap, essentially covering you in juices, right before you start to bury your tongue into her ass again.\n\nWhile your tongue is occupied, she uses hers freely: \"Please... don't.. fucking... stop... hnn...\" You start tonguefucking her asshole even faster, wiggling it deeper into her and making loud slurping sound every time you dig into it.  \"I'mm gonnaa...\"");
+		addChoice("...Cum.", binder("TongueDirty4"));
+	}
+
+	if (seg == "TongueDirty4") {
+		clear();   
+		append("You go as fast as you can, jamming your tongue into her asshole over and over again, complimented with loud squelching. She starts arching back, pressing your face deeper into her ass. You can feel her asshole clenching up on your tongue, immobilizing it. You push as hard as you can while she cums, moaning and grunting in the cutest way possible.\n\nYou loosen your hold a little bit. She flops into the puddle that's underneath her. \n\"You know what? Maybe I like the way I am. :)\"");
+		addChoice("That was awesome. (End)", binder("normalEnd"));
+		addChoice("Do you wanna live in my home with me and Bleat?", binder("meme"));
+	}
+
+	if (seg == "meme") {
+		clear();   
+		append("She blushes \"I- I would love to do that. Unfortunately, I don't know how. I've heard of players so powerful that they can even give people like me the ability to do such things... If you happen to find one, please, let them know. :)\"");
+		addChoice("Maybe...", modExit);
+	}
+
+	if (seg == "Tongue2") {
+		clear();   
+		append("You start licking her pucker in circles, making it twitch vigorously. You can hear the quiet smacking sounds of it opening up and instantly closing again.");
+		addChoice("Time to get serious.", binder("Tongue3"));
+	}
+
+	if (seg == "Tongue3") {
+		clear();   
+		append("You hug both her thighs with your arms to make sure she can't escape, and place the tip of her tongue directly on her little hole. You slowly start to apply pressure onto her entrance... You can feel how she ever so slowly starts to open up, and you start digging your tongue bit by bit into her. She seems to be enjoying it:\n\"Hnnn - right there. <3\" \n\nYou start moving your tongue in and out of her asshole. Every time you pull your tongue out of it, it starts smacking and kissing the sun, making it open up wide. The smell of her pussy grows stronger while you can hear her grunting as you smother your face into her lap, essentially covering you in juices, right before you start to bury your tongue into her ass again.\n\nWhile your tongue is occupied she uses hers freely: \"Please... don't... stop... hnn... \" You start tonguefucking her asshole even faster, wiggling it deeper into her and making loud slurping sounds every time you dig into it.  \"I'mm gonnaa...\"");
+		addChoice("... Cum", binder("TongueDirty4"));
+	}
+
+	if (seg == "normalEnd") {
+		clear();   
+		append("\"You know what? Sometimes I wonder if there is somebody out there who I could thank for the things that are happening to me. I'm just a goo-girl, but you're a player... if you happen to find somebody like that, let them know, ok? :)\"");
+		addChoice("Maybe...", modExit);
+	}
+
+	if (seg == "Finger1") {
+		clear();   
+		append("You place your index finger onto her sweat drenched asshole. She immediately starts rocking back and forth on it eager to do anything for even the smallest amount of friction. She whimpers with a voice quivering as much as her bumhole: \"Please punish this naughty girl.\"");
+		addChoice("Tease. (1 Finger)", binder("Finger2"));
+		addChoice("Punish. (2 Fingers)", binder("Finger5a"));
+		addChoice("Tonguefuck.", binder("Tongue1Hand"));
+	}
+
+	if (seg == "Finger2") {
+		clear();   
+		append("You slowly start to push your finger against her puckered up asshole. There's no denying that she's pretty desperate.\n\n\"Oh god please put it in.\"\n\nYou raise the pressure and with a squelching sound your finger enters her ass. It's warm in there, and you can feel how her asshole is periodically clenching up on you, almost suckling it. \n\nSluggishly your finger goes deeper into her, making lewd noises in the process. An almost invisible amount of light green liquid is squeezing out from the brink of your finger as it completely disappears in her asshole.");
+		addChoice("Make her taste herself so she talks dirty.", binder("Finger3"));
+	}
+
+	if (seg == "Finger3") {
+		clear();   
+		append("It's only a real punishment if you let her understand the scale of her outraging naughtiness. You rip your finger out of her. She howls. It, along with 2 other fingers, slides over her leaking pussy, followed with a more whiny howl, and then you let them hover in front of her face. \n\nShe inspects your dripping hand in disbelief: \"Oh god, I'm so fucked up.\"\n\nYou're about to say that you kind of like it, but before you can do anything she grabs your wrist and pushes your fingers against her nose. She inhales the scent with deep long breaths, moaning in the process and swaying her ass in small circles. \n\nYou let your flat left hand rub up and down her intimate parts while she holds your index finger in place and suckles on it. \"This is by far the most naughtiest lollipop I've ever had.\"\n\nNow you open her ass with your left thumb and index finger, almost thinking aloud: what could you could possibly do with this?");
+		addChoice("Make her beg.", binder("Finger4dirty"));
+		addChoice("Punish. (2 Fingers)", binder("Finger5b"));
+	}
+
+	if (seg == "Finger4dirty") {
+		clear();   
+		append("Knowing how much she's already into it, you wonder if she has a suggestion.\n\nShe does: \"Oh god, I beg of you, ram your fingers inside this slut's fucked up asshole. Use me like a worthless fucktoooyy.\" \n\nYou move your right hand, which she was sucking again, back to her ass and give it a good slap, making her understand that indecent talking really crossed a line. You're determined to—\n\n\"Fuuuck me uuupp!\"\n\n... Well, yeah, that kind of sums it up.");
+		addChoice("Fingerfuck her.", binder("Finger5dirty"));
+	}
+
+	if (seg == "Finger5b") {
+		clear();   
+		append("You place two fingers onto her twitching pucker. \"Wait, I don't think two is a good ideeaaahh—\" (you do) \"— Hnnn...\"\n\nYou start moving at a pace fast enough to create a considerable amount of squelching noises and send small vibrations through her ass every time your knuckles jam against it. \"Oh god... Fuck - Hnnn... right there.\" She starts widening and the noises get juicer while you begin to twist your fingers still ramming them in and out of her anus. \"Hnnn.. Fuck me up moooreeee. <3\"");
+		addChoice("Fuck her up more.", binder("Finger6dirty"));
+		if (hasDick) addChoice("Fuck her in general.", binder("Fuck1"));
+	}
+
+	if (seg == "Finger5dirty") {
+		clear();   
+		append("You place two fingers onto her twitching pucker. \"Wait, I don't think two is a good ideeaaahh—\" (you do) \"— Hnnn...\"\n\nYou start moving at a pace fast enough to create a considerable amount of squelching noises and send small vibrations through her ass every time your knuckles jam against it. \"Oh god... Fuck - Hnnn... right there.\" She starts widening and the noises get juicer while you begin to twist your fingers still ramming them in and out of her anus. \"Hnnn.. Fuck me up moooreeee. <3\"");
+		addChoice("Fuck her up more.", binder("Finger6dirty"));
+		if (hasDick) addChoice("Fuck her in general.", binder("Fuck1"));
+		addChoice("Fist her.", binder("Fist"));
+	}
+
+	if (seg == "Fist") {
+		clear();   
+		append("She's about to get more than she can handle. You pull your fingers out a bit, not stopping to drill her but to carefully widen her ass and get enough space for another finger. Her puffy anus easily allows it to enter, so you follow up with another one right ahead. \n\nMoving four fingers inside now, her heavy moaning turns now more to slow grunting. You're also not sure if she's guardedly pissing, or if goo-girls actually can leak that much pussy juice.\n\n\"Hnnn... Pleeease, I need you to stomp your fucking fist into my perverted asshole.\"\n\nBased on the intensity of her gaping, that might actually possible. You slowly curl your fingers, not completely interrupting your in and out movement, to create enough space for your thumb. All five fingers are now inside her asshole. \"Now pleaseee, don't hold back. <3\"");
+		addChoice("Next.", binder("Fist2"));
+	}
+
+	if (seg == "Fist2") {
+		clear();   
+		append("You won't. You begin to push into her. You can hear her asshole smearing, stretching. Knuckle deep into her asshole, you decide it's best to lose your gaze on her opening ass just for a second to check on her, even though her deep grunting assures you that she most definitely isn't passed out.\n\nThe right side of her face is submerged in a puddle of her own saliva, although you could imagine that her puddle of juice paved its way to her face by now. Her blurry gaze searches the landscape, then stops to focus on you: \"Ram it deeeeper.\" Considering the circumstance, you decide she's lucid enough to drop all thoughtfulness. You also realize that your fist has gained quite a lot of room to move.");
+		addChoice("Start moving.", binder("Fist3"));
+	}
+
+	if (seg == "Fist3") {
+		clear();   
+		append("You pull your hand back to your knuckles slowly just to ram it in as fast as you can again. It makes the most perverted sound possible. You repeat this process, this time she pushes her ass against you, making even naughtier sounds. \n\nTogether you start to pick up the pace, getting faster and noisier with each stroke. \"I'mmmm... so - hnnn... dirtyyy...\"\n\nHalf of your forearm disappears inside her. Your arm is almost as shiny as her skin from essentially digging fluids out of her. \"Oh goooood... I'm gonna cum from having a fist rammed into my asss...\"");
+		addChoice("Fistfuck her.", binder("Fist4"));
+		addChoice("Fistfuck the shit out of her.", binder("Fist4DIRTY"), {kinks: ["Scat"]});
+	}
+
+	if (seg == "Fist4") {
+		clear();   
+		append("You can feel the orgasm building up in her, so you give her a few brutal strokes before you just start to push full force into her while she cums, gurgling and rubbing her face into her puddle.\n\nYou pull your arm out of her with loud, slimy squelching sounds and a plop. \"How can something so fucked up feel so fucking good? Maybe I like the way I am after all.\"");
+		addChoice("That was awesome. (End)", binder("normalEnd"));
+		addChoice("Do you wanna live in my home with me and Bleat?", binder("meme"));
+	}
+
+	if (seg == "Fist4DIRTY") {
+		clear();   
+		append("\"I'm gonnaaa loose my shiiit.\"\n\nYou can feel the orgasm building up in her so you give her a few brutal strokes before you just start to push full force into her. In the process you realize that there's something pushing against your fist. Based on the podgy texture you guess it might be some kind of sex toy at first, but then you realize that she meant \"losing her shit\" literally. \n\nYou look at her, still fisting her as hard as you can. \"Gooosh. Hnnn. I'm gonna come while shitting in front of yoouuu.\"\n\nThat idea is not so bad actually.\n\nYou give one last final strong push and then you pull your elbow deep arm out of her, starting her orgasm (\"I'm cumminngg!\") followed with the nasty sounds of her shit pushing out of her gaping asshole. Still orgasming and shitting she gradually breaks down into the mess underneath her while she rubs her face into her own saliva. \n\nHer still leaking asshole gapes and closes viciously as she mutters into the puddle: \"How can something so fucked up feel so fucking good? Maybe I like the way I am after all.\"");
+		addChoice("That was awesome. (End)", binder("normalEnd"));
+		addChoice("Do you wanna live in my home with me and Bleat?", binder("meme"));
+	}
+
+	if (seg == "Finger5a") {
+		clear();
+		append("You place two fingers onto her twitching pucker. \"Ok, I kinda provoked it, but I really don't think starting out with two fingers is a good ideeaaahh—\" (you do) \"— Hnnn...\"\n\nYou start moving at a pace fast enough to create a considerable amount of squelching noises and send small vibrations through her ass every time your knuckles jam against it. \"Oh god... Fuck - Hnnn... right there.\" She starts widening and the noises get juicer while you begin to turn your fingers counterclockwise and back still ramming them in and out of her anus. \"Hnnn.. Fuck me up moooreeee. <3\"");
+		addChoice("Fuck her up more.", binder("Finger6"));
+		if (hasDick) addChoice("Fuck her in general.", binder("Fuck1"));
+	}
+
+	if (seg == "Finger6dirty") {
+		clear();   
+		append("You put full force into your arm, making sure her anus can't even close completely before you rock your fingers inside her again. Her juices now flow freely down her leg and fill the air with a mesmeric aroma. \n\nShe starts to arch back even more. \"I'm gonna cuummm, just from getting fingerfucked in my perverted assholeee!\"\n\nHer whimper is almost drowned by the lewd noises your ongoing fingerfuck is making. Her asshole clenches up so strong that you get stuck with your fingers inside her, causing you to wiggle left and right inside her as she cums. \"Fuuuuck yeeeessss.\"\n\nYou pull out your fingers with a silent plop.\n\n\"You know what? Maybe I like the way I am. :)\"");
+
+		addChoice("That was awesome. (End)", binder("normalEnd"));
+		addChoice("Do you wanna live in my home with me and Bleat?", binder("meme"));
+	}
+
+	if (seg == "Finger6") {
+		clear();   
+		append("You put full force into your arm, making sure her anus can't even close completely before you rock your fingers inside her again. Her juices now flow freely down her leg and fill the air with a mesmeric aroma. \n\nShe starts to arch back even more. \"I'm gonna cuummm, just from getting fingerfucked!\"\n\nHer whimper is almost drowned by the lewd noises your ongoing fingerfuck is making. Her asshole clenches up so strong that you get stuck with your fingers inside her, causing you to wiggle left and right inside her as she cums. \"Fuuuuck yeeeessss.\"\n\nYou pull out your fingers with a silent plop.\n\n\"You know what? Maybe I like the way I am. :)\"");
+
+		addChoice("That was awesome. (End)", binder("normalEnd"));
+		addChoice("Do you wanna live in my home with me and Bleat?", binder("meme"));
+	}
 }
 
-function startD() {
-	clear();
-	hasDick = true;
-	append("On your journey through the Bright Forest you stumble upon a small lake with huge reeds and leaves surrounding it. You approach the crystal clear water, which almost appears to be floating above the sandbank. Carefully, you dip your feet into the water. It's surprisingly warm.");
-	addChoice("Go for a swim.", goSwim1,{kinks: ["Guest Writer", "Art", "Female",]});
-	addChoice("I'm not into butt stuff. Time to leave.", modExit);
+function binder(toWhere) {
+	return function() { main(toWhere); }
 }
 
-function startnoD() {
-	clear();
-	hasDick = false;
-	append("On your journey through the Bright Forest you stumble upon a small lake with huge reeds and leaves surrounding it. You approach the crystal clear water, which almost appears to be floating above the sandbank. Carefully, you dip your feet into the water. It's surprisingly warm.");
-	addChoice("Go for a swim", goSwim1,{kinks: ["Guest Writer", "Art", "Female",]});
-	addChoice("I'm not into butt stuff. Time to leave.", modExit);
-}
-
-function goSwim1() {
-	clear();
-	append("Just as you're about to get rid of your clothes, you notice a silent humming not far away. It seems to be coming from behind those giant leaves.");
-	addChoice("Follow the humming", goHumming);
-}
-
-function goHumming() {
-	clear();
-	var image = addSprite("goocover.png");
-	image.x = GAME_WIDTH-image.width;
-	image.y = 50;
-	append("You carefully approach the source of the noise, unsure whether your presence is known or appreciated by the figure which\nyou happen to get a glimpse of through the leaves.\n\nA few meters away, albeit in the thicket, you freeze.");
-	addChoice("Talk to her.", gooTalk1);
-	addChoice("I should probably leave.", modExit);
-}
-
-function gooTalk1() {
-	clear();
-	append("You force a few plants apart and step, rustling and crackling, into the light. The girl looks rather surprised about the unexpected visitor. \n\nAt first she blushes and turns her head away, but she quickly gathers her confidence and, with a small smile on her face, in the most innocent way a completely naked stranger could sayit, she says: \n\n\"Oh, hello there player.\"");
-	addChoice("Who are you?", gooTalk2);
-}
-
-function gooTalk2() {
-	clear();
-	append("\"I'm not quite sure what I am, all I know is that I'm definitely not the way I was intended to be. Something must have gone wrong when I was created,\" she says, losing the cute smile.");
-	addChoice("Uhm?", gooTalk3);
-}
-
-function gooTalk3() {
-	clear();
-	append("You sit down to hear her out.\n\n\"You really should just leave and come back when all this is fixed. I'm really weird.\"");
-	addChoice("What do you mean?", gooTalk4);
-}
-
-function gooTalk4() {
-	clear();
-	var image = addSprite("googirl.png");
-	image.x = GAME_WIDTH-image.width;
-	image.y = 50;
-	append("\"It's my butt. My whole body works just fine, but my butt isn't normal at all.\"\nShe says rubbing her hand over her perky and squishy nipples.\n\n\"If I leave it out just a few minutes in the sun, I not only get extremely horny\nbut also itchy, you know, down there. Not to mention how sensitive it is.\"\n\nShe gropes her ass with the other hand\nwhile her green face slowly turns red.");
-	addChoice("But, the sun's been shining on your butt the whole time I'm here...", gooTalk5);
-}
-
-function gooTalk5() {
-	clear();
-	append("\"Wait, what?\" She turns to look at her butt. She's already furiously groping it with her hand.\n\"Uhm, you better leave now— and maybe cover your ears till you get some distance.");
-	addChoice("Or I could help you out. ;)", gooStuff1);
-	addChoice("Leave", modExit);
-}
-
-function gooStuff1() {
-	clear();
-	append("\"S-Sure, if you'd like to do that.\"\n\nYou come closer while she lowers her upper body, rhythmically brushing her breasts against the ground and sticking her bottom in the air. Your face is just inches away from her ass as she starts to slowly crawl forward. You instinctively grab her waist, not wanting her to distance herself one bit from you. \n\n\"You know, we should really get out of the sun. I've never kept my bum in the sun for this long, and I don't wanna think about what would happen to me if I let it shine on my most intimate parts...\" she says, wiggling her ass anxiously in your hands. She's already breathing heavily and goo-sweat-drips are building up on your hands.");
-	addChoice("I want you to spread it. :3", gooStuff2);
-
-
-function gooStuff2() {
-	clear();   
-	append("\"Hnn..\" She seems uncertain but you can almost feel the arousal building up in her and you're determined to not let her wiggle her way out of the situation. For like thirty seconds she just lays there, weighing her options, swinging her butt from left to right in your hands, but eventually, eyes half-closed, she grabs her buttcheecks.");
-	addChoice("Next.", gooStuff3);
-}
-
-function gooStuff3() {
-	clear();
-	var image = addSprite("goonaughty.png");
-	image.x = GAME_WIDTH-image.width;
-	image.y = 50;
-	append("She slowly spreads them wide apart. And you can see how the sun rays start to hit her cute puckered bumhole\nwhile you embrace the scent of her dripping snatch mixed with fresh sweat.\nHer little pucker twitches in anticipation. \"Pleeeaaase— my assshoole!\"");
-	addChoice("Tonguefuck it", Tongue1);
-	addChoice("Fingerfuck it", Finger1);
-}
-
-function Fuck1() {
-	clear();
-	append("You place your cock right between her asscheeks. So she wants to be fucked?\n\n\"Yeessss, pleeease fuck my obscene bummm.\"\n\nYou prod her asshole, which is already smothering with her sweat, juices, and your precum.\n\nYou start pushing, making her anus ever so slowly open up. She is more than just a little tight and its starting to become a real struggle to push into her. After the longest few seconds you've ever experienced, you're finally quite deep inside her bum. Her asshole is gripping your member tightly, rhythmically squeezing it. It's almost painful for you, you really don't even want to imagine what she must be feeling right now.\n\n\"Hnnn sooo fucking goood, please fuck up my slutty bumholeee. <3\"\n\nWell, maybe you will...\n\nYou start fucking her, making her grunt and even slobber a bit, til she's completely lost in ecstasy. Picking up the pace, you start sending waves through her jiggling asscheecks with every thrust, fucking her pucker balls deep which almost seems like it wants to suck you off.\n\n\"Hnnn... yes... keep fucking my perverted asshole!\"");
-	addChoice("Fuck her up.", Fuck2);
-}
-
-function Fuck2() {
-	clear();
-	append("She reaches back with both hands to spread her asscheecks and anus wide open for you. You adjust your movement, pulling your dick out of her every time you move your hips back and effortlessly entering her meanwhile open anus.\n\nNow going all out, your mind starts getting blurry as you thoughtlessly ravage her asshole like an animal, not even caring anymore whether or not she likes it. \"Yeeeesss... Fuck me like a worthless toooyyy.\"\n\nShe really is weird...\n\nYou keep on thrusting, almost drowning her groaning underneath the sound of her ass getting relentlessly fucked, pushing ythe both of you to your absolute limits: \"Hnnn— I'm gonna...\" ");
-	addChoice("... Cum.", Fuck3);
-}
-
-function Fuck3() {
-	clear();
-	append("She presses her ass full force against you as she tightens up even more, making you cum simultaneously. \"Yeesss. <3 Spurt your cum deep in my assholeee!\"\n\nShe sinks to her knees as you hear the sounds of your cum flowing into her, re-doing your deep thrust from time to time, making her ass suckle on your dick till you're completely dry. \n\nShe collapses with a released sigh and you let yourself fall to the ground beside her. She has an almost drunken smile on her face: \"You know what? Maybe I like the way I am. :)\"");
-	addChoice("That was awesome. (End)", normalEnd);
-	addChoice("Do you wanna live in my home with me and Bleat?", meme);
-}
-
-function Tongue1() {
-	clear();
-	append("You let go of her hips and carefully but firmly place your hands on her inner asschecks, spreading her anus a bit open in the process to get an even closer look at it. \n\nA silent whimper escapes the goo girl as she can feel the cooling breath touching her private parts. \n\nYou carefully kiss one of her asschecks, barely touching the surface with your lips. She responds with a longing \"Hnnn <3\". Finally you place your tongue on her asshole and give it a long sloppy lick. She kind of tastes like salt-crackers. <3\n\n\"Pleeaaase~\"");
-	addChoice("Make her beg.", TongueDirty2);
-	addChoice("Next.", Tongue2);
-}
-
-function Tongue1Hand() {
-	clear();
-	append("You remove your finger from her asshole and carefully but firmly place your hands on her inner asschecks, spreading her anus a bit open in the process to get an even closer look at it. \n\nA silent whimper escapes the goo girl as she can feel the cooling breath touching her private parts. You carefully kiss one of her asschecks, barely touching the surface with your lips. She responds with a longing \"Hnnn <3\". Finally you place your tongue on her asshole and give it a long sloppy lick. She kind of tastes like salt-crackers. <3 \n\n\"Pleeaaase~\"");
-	addChoice("Make her beg.", TongueDirty2);
-	addChoice("Next.", Tongue2);
-}
-
-function TongueDirty2() {
-	clear();   
-	append("She needs to give more specific instructions than that... \"Please tonguefuck my naughty little asshole, because I'm a dirty slut who gets off with a tongue in her perverted aaassss.\"\n\nYou start licking her pucker in circles, making it twitch vigorously. You can hear the silent smacking sounds of it opening up and instantly closing again. She's a little more eager than you: \"I'm going to fucking go crazyyy. PLEASE, ram your tongue into my fucked up asshole!\"");
-	addChoice("Time to get serious.", TongueDirty3);
-}
-
-function TongueDirty3() {
-	clear();   
-	append("You hug both her thighs with your arms to make sure she can't escape and place the tip of your tongue directly on her little hole. You slowly start to apply pressure onto her entrance... You can feel how she ever so slowly starts to open up, and you start digging your tongue bit by bit into her. She seems to be enjoying it:\n\"Hnnn— fuuck my asshole. <3\" \n\nYou start moving your tongue in and out of her asshole. Every time you pull your tongue out of it, it starts smacking and kissing the sun, making it open up wide. The smell of her pussy grows stronger while you can hear her grunting as you smother your face into her lap, essentially covering you in juices, right before you start to bury your tongue into her ass again.\n\nWhile your tongue is occupied, she uses hers freely: \"Please... don't.. fucking... stop... hnn...\" You start tonguefucking her asshole even faster, wiggling it deeper into her and making loud slurping sound every time you dig into it.  \"I'mm gonnaa...\"");
-	addChoice("...Cum.", TongueDirty4);
-}
-
-function TongueDirty4() {
-	clear();   
-	append("You go as fast as you can, jamming your tongue into her asshole over and over again, complimented with loud squelching. She starts arching back, pressing your face deeper into her ass. You can feel her asshole clenching up on your tongue, immobilizing it. You push as hard as you can while she cums, moaning and grunting in the cutest way possible.\n\nYou loosen your hold a little bit. She flops into the puddle that's underneath her. \n\"You know what? Maybe I like the way I am. :)\"");
-	addChoice("That was awesome. (End)", normalEnd);
-	addChoice("Do you wanna live in my home with me and Bleat?",meme);
-}
-
-function meme() {
-	clear();   
-	append("She blushes \"I- I would love to do that. Unfortunately, I don't know how. I've heard of players so powerful that they can even give people like me the ability to do such things... If you happen to find one, please, let them know. :)\"");
-	addChoice("Maybe...", modExit);
-}
-
-function Tongue2() {
-	clear();   
-	append("You start licking her pucker in circles, making it twitch vigorously. You can hear the quiet smacking sounds of it opening up and instantly closing again.");
-	addChoice("Time to get serious.", Tongue3);
-}
-
-function Tongue3() {
-	clear();   
-	append("You hug both her thighs with your arms to make sure she can't escape, and place the tip of her tongue directly on her little hole. You slowly start to apply pressure onto her entrance... You can feel how she ever so slowly starts to open up, and you start digging your tongue bit by bit into her. She seems to be enjoying it:\n\"Hnnn - right there. <3\" \n\nYou start moving your tongue in and out of her asshole. Every time you pull your tongue out of it, it starts smacking and kissing the sun, making it open up wide. The smell of her pussy grows stronger while you can hear her grunting as you smother your face into her lap, essentially covering you in juices, right before you start to bury your tongue into her ass again.\n\nWhile your tongue is occupied she uses hers freely: \"Please... don't... stop... hnn... \" You start tonguefucking her asshole even faster, wiggling it deeper into her and making loud slurping sounds every time you dig into it.  \"I'mm gonnaa...\"");
-	addChoice("... Cum", TongueDirty4);
-}
-
-function normalEnd() {
-	clear();   
-	append("\"You know what? Sometimes I wonder if there is somebody out there who I could thank for the things that are happening to me. I'm just a goo-girl, but you're a player... if you happen to find somebody like that, let them know, ok? :)\"");
-	addChoice("Maybe...", modExit);
-}
-
-function Finger1() {
-	clear();   
-	append("You place your index finger onto her sweat drenched asshole. She immediately starts rocking back and forth on it eager to do anything for even the smallest amount of friction. She whimpers with a voice quivering as much as her bumhole: \"Please punish this naughty girl.\"");
-	addChoice("Tease. (1 Finger)", Finger2);
-	addChoice("Punish. (2 Fingers)", Finger5a);
-	addChoice("Tonguefuck.", Tongue1Hand);
-}
-
-function Finger2() {
-	clear();   
-	append("You slowly start to push your finger against her puckered up asshole. There's no denying that she's pretty desperate.\n\n\"Oh god please put it in.\"\n\nYou raise the pressure and with a squelching sound your finger enters her ass. It's warm in there, and you can feel how her asshole is periodically clenching up on you, almost suckling it. \n\nSluggishly your finger goes deeper into her, making lewd noises in the process. An almost invisible amount of light green liquid is squeezing out from the brink of your finger as it completely disappears in her asshole.");
-	addChoice("Make her taste herself so she talks dirty.", Finger3);
-}
-
-function Finger3() {
-	clear();   
-	append("It's only a real punishment if you let her understand the scale of her outraging naughtiness. You rip your finger out of her. She howls. It, along with 2 other fingers, slides over her leaking pussy, followed with a more whiny howl, and then you let them hover in front of her face. \n\nShe inspects your dripping hand in disbelief: \"Oh god, I'm so fucked up.\"\n\nYou're about to say that you kind of like it, but before you can do anything she grabs your wrist and pushes your fingers against her nose. She inhales the scent with deep long breaths, moaning in the process and swaying her ass in small circles. \n\nYou let your flat left hand rub up and down her intimate parts while she holds your index finger in place and suckles on it. \"This is by far the most naughtiest lollipop I've ever had.\"\n\nNow you open her ass with your left thumb and index finger, almost thinking aloud: what could you could possibly do with this?");
-	addChoice("Make her beg.", Finger4dirty);
-	addChoice("Punish. (2 Fingers)", Finger5b);
-}
-
-function Finger4dirty() {
-	clear();   
-	append("Knowing how much she's already into it, you wonder if she has a suggestion.\n\nShe does: \"Oh god, I beg of you, ram your fingers inside this slut's fucked up asshole. Use me like a worthless fucktoooyy.\" \n\nYou move your right hand, which she was sucking again, back to her ass and give it a good slap, making her understand that indecent talking really crossed a line. You're determined to—\n\n\"Fuuuck me uuupp!\"\n\n... Well, yeah, that kind of sums it up.");
-	addChoice("Fingerfuck her.", Finger5dirty);
-}
-
-function Finger5b() {
-	clear();   
-	append("You place two fingers onto her twitching pucker. \"Wait, I don't think two is a good ideeaaahh—\" (you do) \"— Hnnn...\"\n\nYou start moving at a pace fast enough to create a considerable amount of squelching noises and send small vibrations through her ass every time your knuckles jam against it. \"Oh god... Fuck - Hnnn... right there.\" She starts widening and the noises get juicer while you begin to twist your fingers still ramming them in and out of her anus. \"Hnnn.. Fuck me up moooreeee. <3\"");
-	addChoice("Fuck her up more.", Finger6dirty);
-	if (hasDick) addChoice("Fuck her in general.", Fuck1);
-}
-
-function Finger5dirty() {
-	clear();   
-	append("You place two fingers onto her twitching pucker. \"Wait, I don't think two is a good ideeaaahh—\" (you do) \"— Hnnn...\"\n\nYou start moving at a pace fast enough to create a considerable amount of squelching noises and send small vibrations through her ass every time your knuckles jam against it. \"Oh god... Fuck - Hnnn... right there.\" She starts widening and the noises get juicer while you begin to twist your fingers still ramming them in and out of her anus. \"Hnnn.. Fuck me up moooreeee. <3\"");
-	addChoice("Fuck her up more.", Finger6dirty);
-	if (hasDick) addChoice("Fuck her in general.", Fuck1);
-	addChoice("Fist her.", Fist);
-}
-
-function Fist() {
-	clear();   
-	append("She's about to get more than she can handle. You pull your fingers out a bit, not stopping to drill her but to carefully widen her ass and get enough space for another finger. Her puffy anus easily allows it to enter, so you follow up with another one right ahead. \n\nMoving four fingers inside now, her heavy moaning turns now more to slow grunting. You're also not sure if she's guardedly pissing, or if goo-girls actually can leak that much pussy juice.\n\n\"Hnnn... Pleeease, I need you to stomp your fucking fist into my perverted asshole.\"\n\nBased on the intensity of her gaping, that might actually possible. You slowly curl your fingers, not completely interrupting your in and out movement, to create enough space for your thumb. All five fingers are now inside her asshole. \"Now pleaseee, don't hold back. <3\"");
-	addChoice("Next.", Fist2);
-}
-
-function Fist2() {
-	clear();   
-	append("You won't. You begin to push into her. You can hear her asshole smearing, stretching. Knuckle deep into her asshole, you decide it's best to lose your gaze on her opening ass just for a second to check on her, even though her deep grunting assures you that she most definitely isn't passed out.\n\nThe right side of her face is submerged in a puddle of her own saliva, although you could imagine that her puddle of juice paved its way to her face by now. Her blurry gaze searches the landscape, then stops to focus on you: \"Ram it deeeeper.\" Considering the circumstance, you decide she's lucid enough to drop all thoughtfulness. You also realize that your fist has gained quite a lot of room to move.");
-	addChoice("Start moving.", Fist3);
-}
-
-function Fist3() {
-	clear();   
-	append("You pull your hand back to your knuckles slowly just to ram it in as fast as you can again. It makes the most perverted sound possible. You repeat this process, this time she pushes her ass against you, making even naughtier sounds. \n\nTogether you start to pick up the pace, getting faster and noisier with each stroke. \"I'mmmm... so - hnnn... dirtyyy...\"\n\nHalf of your forearm disappears inside her. Your arm is almost as shiny as her skin from essentially digging fluids out of her. \"Oh goooood... I'm gonna cum from having a fist rammed into my asss...\"");
-	addChoice("Fistfuck her.", Fist4);
-	addChoice("Fistfuck the shit out of her.", Fist4DIRTY, {kinks: ["Scat"]});
-}
-
-function Fist4() {
-	clear();   
-	append("You can feel the orgasm building up in her, so you give her a few brutal strokes before you just start to push full force into her while she cums, gurgling and rubbing her face into her puddle.\n\nYou pull your arm out of her with loud, slimy squelching sounds and a plop. \"How can something so fucked up feel so fucking good? Maybe I like the way I am after all.\"");
-	addChoice("That was awesome. (End)", normalEnd);
-	addChoice("Do you wanna live in my home with me and Bleat?", meme);
-}
-
-function Fist4DIRTY() {
-	clear();   
-	append("\"I'm gonnaaa loose my shiiit.\"\n\nYou can feel the orgasm building up in her so you give her a few brutal strokes before you just start to push full force into her. In the process you realize that there's something pushing against your fist. Based on the podgy texture you guess it might be some kind of sex toy at first, but then you realize that she meant \"losing her shit\" literally. \n\nYou look at her, still fisting her as hard as you can. \"Gooosh. Hnnn. I'm gonna come while shitting in front of yoouuu.\"\n\nThat idea is not so bad actually.\n\nYou give one last final strong push and then you pull your elbow deep arm out of her, starting her orgasm (\"I'm cumminngg!\") followed with the nasty sounds of her shit pushing out of her gaping asshole. Still orgasming and shitting she gradually breaks down into the mess underneath her while she rubs her face into her own saliva. \n\nHer still leaking asshole gapes and closes viciously as she mutters into the puddle: \"How can something so fucked up feel so fucking good? Maybe I like the way I am after all.\"");
-	addChoice("That was awesome. (End)", normalEnd);
-	addChoice("Do you wanna live in my home with me and Bleat?", meme);
-}
-
-function Finger5a() {
-	clear();
-	append("You place two fingers onto her twitching pucker. \"Ok, I kinda provoked it, but I really don't think starting out with two fingers is a good ideeaaahh—\" (you do) \"— Hnnn...\"\n\nYou start moving at a pace fast enough to create a considerable amount of squelching noises and send small vibrations through her ass every time your knuckles jam against it. \"Oh god... Fuck - Hnnn... right there.\" She starts widening and the noises get juicer while you begin to turn your fingers counterclockwise and back still ramming them in and out of her anus. \"Hnnn.. Fuck me up moooreeee. <3\"");
-	addChoice("Fuck her up more.", Finger6);
-	if (hasDick) addChoice("Fuck her in general.", Fuck1);
-}
-
-function Finger6dirty() {
-	clear();   
-	append("You put full force into your arm, making sure her anus can't even close completely before you rock your fingers inside her again. Her juices now flow freely down her leg and fill the air with a mesmeric aroma. \n\nShe starts to arch back even more. \"I'm gonna cuummm, just from getting fingerfucked in my perverted assholeee!\"\n\nHer whimper is almost drowned by the lewd noises your ongoing fingerfuck is making. Her asshole clenches up so strong that you get stuck with your fingers inside her, causing you to wiggle left and right inside her as she cums. \"Fuuuuck yeeeessss.\"\n\nYou pull out your fingers with a silent plop.\n\n\"You know what? Maybe I like the way I am. :)\"");
-
-	addChoice("That was awesome. (End)", normalEnd);
-	addChoice("Do you wanna live in my home with me and Bleat?", meme);
-}
-
-function Finger6() {
-	clear();   
-	append("You put full force into your arm, making sure her anus can't even close completely before you rock your fingers inside her again. Her juices now flow freely down her leg and fill the air with a mesmeric aroma. \n\nShe starts to arch back even more. \"I'm gonna cuummm, just from getting fingerfucked!\"\n\nHer whimper is almost drowned by the lewd noises your ongoing fingerfuck is making. Her asshole clenches up so strong that you get stuck with your fingers inside her, causing you to wiggle left and right inside her as she cums. \"Fuuuuck yeeeessss.\"\n\nYou pull out your fingers with a silent plop.\n\n\"You know what? Maybe I like the way I am. :)\"");
-
-	addChoice("That was awesome. (End)", normalEnd);
-	addChoice("Do you wanna live in my home with me and Bleat?", meme);
-}
-
-main();
+main("start");

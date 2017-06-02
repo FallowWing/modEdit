@@ -8,23 +8,20 @@ function main(seg) {
 	if (seg == "start") {
 		clear();
 		append("Do you have a dick?");
-		addChoice("Yes", binder("startD"));
-		addChoice("No", binder("startnoD"));
+		addChoice("Yes", function() {
+			hasDick = true;
+			main("start2");
+		});
+		addChoice("No", function() {
+			hasDick = false;
+			main("start2");
+		});
 	}
 
-	if (seg == "startD") {
+	if (seg == "start2") {
 		clear();
-		hasDick = true;
 		append("On your journey through the Bright Forest you stumble upon a small lake with huge reeds and leaves surrounding it. You approach the crystal clear water, which almost appears to be floating above the sandbank. Carefully, you dip your feet into the water. It's surprisingly warm.");
 		addChoice("Go for a swim.", binder("goSwim1"), {kinks: ["Guest Writer", "Art", "Female",]});
-		addChoice("I'm not into butt stuff. Time to leave.", modExit);
-	}
-
-	if (seg == "startnoD") {
-		clear();
-		hasDick = false;
-		append("On your journey through the Bright Forest you stumble upon a small lake with huge reeds and leaves surrounding it. You approach the crystal clear water, which almost appears to be floating above the sandbank. Carefully, you dip your feet into the water. It's surprisingly warm.");
-		addChoice("Go for a swim", binder("goSwim1"), {kinks: ["Guest Writer", "Art", "Female",]});
 		addChoice("I'm not into butt stuff. Time to leave.", modExit);
 	}
 
